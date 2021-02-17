@@ -10,7 +10,8 @@ class School
   end
   
   def add_student(student_name, grade)
-    @roster[grade] ||= []
+    @roster[grade] ||= [] # if @roster[grade] is undefined, nil or false, assign [] to @roster[grade]. Otherwise keep @roster[grade] intact.
+    # Same as above @roster[grade] || @roster[grade] = []
     @roster[grade] << student_name
   end
   
@@ -23,7 +24,7 @@ class School
     
     # @roster.map {|grade, student_name| .sort{|a, b| a<=>b} }
     
-    @roster.each {|grade, student_names| student_names.sort!{|a, b| a<=>b}}
+    @roster.each {|grade, student_names| student_names.sort!{|a, b| a<=> b}}
     
     #need to look into sort and sort!
     
